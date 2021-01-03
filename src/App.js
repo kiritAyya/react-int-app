@@ -6,12 +6,14 @@ import { NewExpense } from "./views/NewExpense";
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/new" component={NewExpense} />
-        <Route path="/" component={Dashboard} exact />
-      </Switch>
-    </Router>
+    <div className="p-3" style={{ height: '100vh'}}>
+      <Router>
+        <Switch>
+          <Route path="/new" component={NewExpense} />
+          <Route path="/" component={Dashboard} exact />
+        </Switch>
+      </Router>
+    </div>
   );
 }
 
