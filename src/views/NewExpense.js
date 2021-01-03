@@ -17,6 +17,14 @@ export const NewExpense = () => {
   const [shareA, setShareA] = useState(0);
   const [shareB, setShareB] = useState(0);
 
+  const updateField = (e, updater) => {
+    const fieldVal = +e.target.value;
+
+    if (fieldVal || fieldVal === 0) {
+      updater(fieldVal);
+    }
+  };
+
   const onSubmit = () => {
     if (total === 0 || description === "") {
       alert("Please add a total and description!");
@@ -52,7 +60,7 @@ export const NewExpense = () => {
           <Form.Control
             type="text"
             name="total"
-            onChange={(e) => setTotal(+e.target.value)}
+            onChange={(e) => updateField(e, setTotal)}
             value={total}
           />
         </Form.Group>
@@ -83,7 +91,7 @@ export const NewExpense = () => {
                 <Form.Control
                   type="text"
                   name="shareA"
-                  onChange={(e) => setShareA(+e.target.value)}
+                  onChange={(e) => updateField(e, setShareA)}
                   value={shareA}
                 />
               </td>
@@ -95,7 +103,7 @@ export const NewExpense = () => {
                 <Form.Control
                   type="text"
                   name="shareB"
-                  onChange={(e) => setShareB(+e.target.value)}
+                  onChange={(e) => updateField(e, setShareB)}
                   value={shareB}
                 />
               </td>

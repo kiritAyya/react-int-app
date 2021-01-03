@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react";
 export const ExpenseContext = createContext();
 
 export const ExpenseProvider = ({ children }) => {
-  const [expenses, setExpenses] = useState([]);
+  const [expenses, setExpenses] = useState([]); // [{ total, description, shareA, shareB }, ...];
   const [balances, setBalances] = useState({ balanceA: 0, balanceB: 0 });
 
   return (
